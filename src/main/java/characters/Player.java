@@ -14,7 +14,6 @@ public abstract class Player {
     CharacterType characterType;
 
 
-
     public Player(String name, int healthPoints, CharacterType characterType){
         this.name = name;
         this.healthPoints = healthPoints;
@@ -37,5 +36,5 @@ public abstract class Player {
     public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
     }
-
 }
+
