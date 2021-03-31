@@ -1,6 +1,7 @@
 package characters;
 
 import Item.CharacterType;
+import Item.SpellType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,6 +25,11 @@ public class WitchTest {
     @Test
     public void hasCharacter(){
         assertEquals(CharacterType.WITCH, witch.getCharacterType());
+    }
+
+    @Test
+    public void canCastSpell(){
+        assertEquals(10, witch.attack(SpellType.FIRE));
     }
 
 }

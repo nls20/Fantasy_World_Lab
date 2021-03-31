@@ -1,6 +1,7 @@
 package characters;
 
 import Item.CharacterType;
+import Item.HealType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,6 +25,11 @@ public class HealerTest {
     @Test
     public void hasCharacter(){
         assertEquals(CharacterType.HEALER, healer.getCharacterType());
+    }
+
+    @Test
+    public void canHeal(){
+        assertEquals(10, healer.canHeal(HealType.HERB));
     }
 
 }

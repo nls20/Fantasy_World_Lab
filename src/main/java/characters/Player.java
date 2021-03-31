@@ -1,6 +1,10 @@
 package characters;
 
 import Item.CharacterType;
+import Item.WeaponType;
+import behaviours.IAttack;
+import behaviours.IHeal;
+import behaviours.ISpell;
 
 public abstract class Player {
 
@@ -29,4 +33,9 @@ public abstract class Player {
     public CharacterType getCharacterType() {
         return characterType;
     }
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
 }

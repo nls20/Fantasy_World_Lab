@@ -2,7 +2,7 @@ package Item;
 
 public enum SpellType {
     FIRE (10),
-    LIGHTING (20),
+    LIGHTNING (20),
     FROST(30);
 
     private final int damage;

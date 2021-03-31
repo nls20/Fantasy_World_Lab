@@ -34,5 +34,9 @@ public class KnightTest {
         assertEquals(WeaponType.SWORD, knight.getWeaponType(WeaponType.SWORD));
     }
 
+    @Test
+    public void canGetFullHealth(){
+        assertEquals(150, knight.setFullHealth());
+    }
 
 }

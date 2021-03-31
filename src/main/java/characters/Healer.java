@@ -9,7 +9,8 @@ public class Healer extends Player implements IHeal {
         super(name, healthPoints, characterType);
     }
 
-    public int heal(HealType healType) {
+    public int canHeal(HealType healType) {
         return healType.getHealed();
     }
+
 }

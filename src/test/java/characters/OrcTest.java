@@ -1,6 +1,7 @@
 package characters;
 
 import Item.CharacterType;
+import Item.WeaponType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,10 +26,10 @@ public class OrcTest {
         assertEquals(150, orc.getHealthPoints());
     }
 
-//    @Test
-//    public void hasArmour(){
-//        assertEquals(100, orc.getArmourPoints());
-//    }
+    @Test
+    public void canAttack(){
+        assertEquals(35, orc.attack(WeaponType.CLUB));
+    }
 
     @Test
     public void hasCharacter(){

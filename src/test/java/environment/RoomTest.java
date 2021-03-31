@@ -1,6 +1,7 @@
 package environment;
 
 import Item.CharacterType;
+import Item.SpellType;
 import Item.WeaponType;
 import characters.*;
 import org.junit.Before;
@@ -10,15 +11,14 @@ import static org.junit.Assert.*;
 
 public class RoomTest {
 
-    Player player;
-    Enemy enemy;
-
     Knight knight;
     Witch witch;
     Healer healer;
 
+
     Orc orc;
 
+    WeaponType weaponType;
     Room room;
 
     @Before
@@ -28,25 +28,50 @@ public class RoomTest {
         witch = new Witch("Jenny", 200,  CharacterType.WITCH);
         orc = new Orc("Andrew", 150,  CharacterType.ORC);
 
+//        weaponType = new WeaponType(weaponType.getDamage());
+
         room = new Room("Dungeon", knight, witch, healer, orc);
     }
 
     @Test
     public void canAttackOrc(){
-        room.attackOrc(WeaponType.SWORD);
-        System.out.println(room.attackOrc(WeaponType.SWORD));
-        room.attackOrc(WeaponType.SWORD);
-        System.out.println(room.attackOrc(WeaponType.SWORD));
-        assertEquals(0, room.attackOrc(WeaponType.SWORD));
+        room.knightCanAttackOrc(WeaponType.SWORD);
+        room.knightCanAttackOrc(WeaponType.SWORD);
+        assertEquals(50, orc.getHealthPoints());
+    }
+
+
+    @Test
+    public void witchCanAttackOrc () {
+        room.witchCanAttackOrc(SpellType.FIRE);
+        room.witchCanAttackOrc(SpellType.FROST);
+        assertEquals(110, orc.getHealthPoints());
     }
 
     @Test
     public void canKillOrc(){
-        room.attackOrc(WeaponType.SWORD);
-        room.attackOrc(WeaponType.SWORD);
-        room.attackOrc(WeaponType.SWORD);
+        room.knightCanAttackOrc(WeaponType.SWORD);
+        room.knightCanAttackOrc(WeaponType.SWORD);
+        room.witchCanAttackOrc(SpellType.FROST);
+        room.witchCanAttackOrc(SpellType.LIGHTNING);
         assertEquals("Orc is dead", room.killOrc());
     }
+
+    @Test
+    public void orcCanAttackWitch(){
+        room.orcCanAttackWitch(WeaponType.CLUB);
+        room.orcCanAttackWitch(WeaponType.AXE);
+        assertEquals(125, witch.getHealthPoints());
+    }
+
+    @Test
+    public void orcCanAttackKnight(){
+        room.OrcCanAttackKnight(WeaponType.CLUB);
+        room.OrcCanAttackKnight(WeaponType.AXE);
+        assertEquals(75, witch.getHealthPoints());
+    }
+
+
 
 
 }

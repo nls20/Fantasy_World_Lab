@@ -6,7 +6,7 @@ public enum WeaponType {
     CLUB(35);
 
 
-    private final int damage;
+    protected final int damage;
 
     WeaponType(int damage) {
         this.damage = damage;

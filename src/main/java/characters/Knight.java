@@ -5,10 +5,9 @@ import Item.WeaponType;
 import behaviours.IAttack;
 
 
-public class Knight extends Player implements IAttack {
+public class Knight extends Player implements IAttack{
 
     private int armourPoints;
-    private WeaponType weaponType;
 
     public Knight(String name, int healthPoints, int armourPoints, CharacterType characterType) {
         super(name, healthPoints, characterType);
@@ -16,6 +15,9 @@ public class Knight extends Player implements IAttack {
 
     }
 
+//    public void setFullHealth(int armourPoints) {
+//        this.armourPoints = armourPoints + this.getHealthPoints();
+//    }
 
     public int getArmourPoints() {
         return armourPoints;
@@ -29,4 +31,11 @@ public class Knight extends Player implements IAttack {
         return weaponType.getDamage();
     }
 
+    public int setFullHealth() {
+        return this.getArmourPoints() + this.getHealthPoints();
+    }
+
+//    public void setFullHealth(){
+//        this.armourPoints += this.getHealthPoints();
+//    }
 }

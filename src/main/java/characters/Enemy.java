@@ -20,6 +20,10 @@ public class Enemy {
         return healthPoints;
     }
 
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
     public String getName() {
         return name;
     }

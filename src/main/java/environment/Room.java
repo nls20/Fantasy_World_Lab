@@ -1,5 +1,6 @@
 package environment;
 
+import Item.SpellType;
 import Item.WeaponType;
 import characters.*;
 import com.sun.tools.corba.se.idl.constExpr.Or;
@@ -7,9 +8,6 @@ import com.sun.tools.corba.se.idl.constExpr.Or;
 import java.util.SplittableRandom;
 
 public class Room {
-
-    private Player player;
-    private Enemy enemy;
 
     private Knight knight;
     private Witch witch;
@@ -27,9 +25,14 @@ public class Room {
         this.orc = orc;
     }
 
-    public int attackOrc(WeaponType weaponType){
-        int orc = this.orc.getHealthPoints();
-        return orc -= this.knight.attack(weaponType);
+    public void knightCanAttackOrc(WeaponType weaponType){
+      int org = this.orc.getHealthPoints();
+      this.orc.setHealthPoints(org - this.knight.attack(weaponType));
+    }
+
+    public void witchCanAttackOrc(SpellType spellType){
+        int org = this.orc.getHealthPoints();
+        this.orc.setHealthPoints(org - this.witch.attack(spellType));
     }
 
     public String killOrc(){
@@ -41,8 +44,14 @@ public class Room {
         }
     }
 
-//
-//    public int getOrcHealthPoints() {
-//        return this.orc.getHealthPoints();
-//    }
+    public void OrcCanAttackKnight(WeaponType weaponType){
+        int knight = this.knight.getHealthPoints();
+        this.knight.setFullHealth(knight - this.orc.attack(weaponType));
+    }
+
+    public void orcCanAttackWitch(WeaponType weaponType){
+        int witch = this.witch.getHealthPoints();
+        this.witch.setHealthPoints(witch - this.orc.attack(weaponType));
+    }
+
 }

@@ -4,5 +4,5 @@ import Item.HealType;
 
 public interface IHeal {
 
-    public int heal(HealType healType);
+    public int canHeal(HealType healType);
 }
