@@ -25,8 +25,8 @@ public class RoomTest {
     public void setUp(){
         knight = new Knight("David", 100, CharacterType.KNIGHT);
         healer = new Healer("John", 50,  CharacterType.HEALER);
-        witch = new Witch("Jenny", 200,  CharacterType.WITCH);
-        orc = new Orc("Andrew", 150,  CharacterType.ORC);
+        witch = new Witch("Amy", 200,  CharacterType.WITCH);
+        orc = new Orc("James", 150,  CharacterType.ORC);
 
 //        weaponType = new WeaponType(weaponType.getDamage());
 

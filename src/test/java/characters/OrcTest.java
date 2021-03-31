@@ -14,12 +14,12 @@ public class OrcTest {
 
     @Before
     public void setUp(){
-        orc = new Orc("Andrew", 150,  CharacterType.ORC);
+        orc = new Orc("James", 150,  CharacterType.ORC);
     }
 
     @Test
     public void hasName(){
-        assertEquals("Andrew", orc.getName());
+        assertEquals("James", orc.getName());
     }
     @Test
     public void hasHealth(){

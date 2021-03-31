@@ -14,7 +14,7 @@ public class WitchTest {
 
     @Before
     public void setUp(){
-        witch = new Witch("Jenny", 200,  CharacterType.WITCH);
+        witch = new Witch("Amy", 200,  CharacterType.WITCH);
     }
 
     @Test
