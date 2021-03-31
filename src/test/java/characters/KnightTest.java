@@ -14,17 +14,17 @@ public class KnightTest {
 
     @Before
     public void setUp(){
-        knight = new Knight("David", 100, 50, CharacterType.KNIGHT);
+        knight = new Knight("David", 100, CharacterType.KNIGHT);
     }
 
     @Test
     public void hasHealth(){
         assertEquals(100, knight.getHealthPoints());
     }
-    @Test
-    public void hasArmour(){
-        assertEquals(50, knight.getArmourPoints());
-    }
+//    @Test
+//    public void hasArmour(){
+//        assertEquals(50, knight.getArmourPoints());
+//    }
     @Test
     public void hasCharacter(){
         assertEquals(CharacterType.KNIGHT, knight.getCharacterType());
@@ -34,9 +34,9 @@ public class KnightTest {
         assertEquals(WeaponType.SWORD, knight.getWeaponType(WeaponType.SWORD));
     }
 
-    @Test
-    public void canGetFullHealth(){
-        assertEquals(150, knight.setFullHealth());
-    }
+//    @Test
+//    public void canGetFullHealth(){
+//        assertEquals(150, knight.addArmourToHealth());
+//    }
 
 }

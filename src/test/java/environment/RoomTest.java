@@ -23,7 +23,7 @@ public class RoomTest {
 
     @Before
     public void setUp(){
-        knight = new Knight("David", 100, 50, CharacterType.KNIGHT);
+        knight = new Knight("David", 100, CharacterType.KNIGHT);
         healer = new Healer("John", 50,  CharacterType.HEALER);
         witch = new Witch("Jenny", 200,  CharacterType.WITCH);
         orc = new Orc("Andrew", 150,  CharacterType.ORC);
@@ -68,7 +68,7 @@ public class RoomTest {
     public void orcCanAttackKnight(){
         room.OrcCanAttackKnight(WeaponType.CLUB);
         room.OrcCanAttackKnight(WeaponType.AXE);
-        assertEquals(75, witch.getHealthPoints());
+        assertEquals(25, knight.getHealthPoints());
     }
 
 

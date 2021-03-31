@@ -44,9 +44,12 @@ public class Room {
         }
     }
 
+//    public int OrcCanAttackKnight(WeaponType weaponType){
+//        return this.knight.addArmourToHealth() - this.orc.attack(weaponType);
+//    }
+
     public void OrcCanAttackKnight(WeaponType weaponType){
-        int knight = this.knight.getHealthPoints();
-        this.knight.setFullHealth(knight - this.orc.attack(weaponType));
+        this.knight.setHealthPoints(this.knight.getHealthPoints() - this.orc.attack(weaponType));
     }
 
     public void orcCanAttackWitch(WeaponType weaponType){
